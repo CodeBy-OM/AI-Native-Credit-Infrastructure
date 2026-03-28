@@ -1,7 +1,5 @@
 # Vitto — AI-Native Digital Credit Infrastructure
 
-> Full-stack submission for the Vitto Full Stack Intern Assignment
-
 ---
 
 ## 🏗️ Project Structure
@@ -43,7 +41,6 @@ vitto/
 | 4 | Full-Stack Automation Page — 5 layers, 29+ modules, interactive layer navigator | ✅ |
 | 5 | Thought Leadership Article — "Retrofit AI vs AI-Native Infrastructure in BFSI" | ✅ |
 | 6 | Self Sign-Up Flow — 3-step form with OTP + backend APIs + PostgreSQL + MongoDB | ✅ |
-| Bonus | Visual diagram (AI lifecycle), thought leadership article embedded in site | ✅ |
 
 ---
 
@@ -59,7 +56,7 @@ vitto/
 ```bash
 cd frontend
 npm install
-cp .env.example .env        # optional — defaults to localhost:4000
+cp .env.example .env   
 npm start
 # Opens at http://localhost:3000
 ```
@@ -294,21 +291,4 @@ curl http://localhost:4000/api/leads/YOUR_LEAD_UUID \
 **Architecture:** Graceful degradation when databases are unavailable — all endpoints return valid responses using in-memory fallbacks. This allows evaluation without infrastructure setup.
 
 ---
-
-## 💡 One Positioning Statement
-
-> "A traditional LOS is a transaction system. Vitto is a decisioning system."
-
----
-
-## 🔄 What I'd Do With More Time
-
-1. Add real email/SMS OTP delivery (SendGrid + MSG91)
-2. Implement a full admin dashboard for lead management
-3. Add the visual AI lifecycle diagram as an interactive SVG React component
-4. Write unit + integration tests for all API endpoints (Jest + Supertest)
-5. Set up CI/CD pipeline with GitHub Actions
-
----
-
 *Vitto Technologies Pvt. Ltd. — Confidential*
