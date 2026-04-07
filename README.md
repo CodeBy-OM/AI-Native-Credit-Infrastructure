@@ -216,51 +216,6 @@ Retrieve a lead record.
 }
 ```
 
-### POST `/api/contact`
-Submit a demo request (no auth required).
-
-```json
-// Request
-{
-  "name": "Rajesh Menon",
-  "email": "rajesh@aavas.in",
-  "institution": "Aavas Financiers",
-  "role": "CRO / Head of Credit",
-  "message": "Interested in MSME underwriting automation."
-}
-```
-
----
-
-## 🧪 Testing with curl
-
-```bash
-# 1. Send OTP
-curl -X POST http://localhost:4000/api/auth/send-otp \
-  -H "Content-Type: application/json" \
-  -d '{"email":"test@nbfc.com"}'
-
-# 2. Verify OTP (use OTP from step 1 response)
-curl -X POST http://localhost:4000/api/auth/verify-otp \
-  -H "Content-Type: application/json" \
-  -d '{"email":"test@nbfc.com","otp":"XXXXXX"}'
-
-# 3. Create Lead (use token from step 2)
-curl -X POST http://localhost:4000/api/leads \
-  -H "Content-Type: application/json" \
-  -H "Authorization: Bearer YOUR_TOKEN" \
-  -d '{
-    "email":"test@nbfc.com",
-    "institution_name":"TestNBFC",
-    "institution_type":"NBFC",
-    "city":"Mumbai",
-    "loan_book_size":"₹250–1,000 Cr"
-  }'
-
-# 4. Get Lead by ID
-curl http://localhost:4000/api/leads/YOUR_LEAD_UUID \
-  -H "Authorization: Bearer YOUR_TOKEN"
-```
 
 ---
 
@@ -290,5 +245,3 @@ curl http://localhost:4000/api/leads/YOUR_LEAD_UUID \
 
 **Architecture:** Graceful degradation when databases are unavailable — all endpoints return valid responses using in-memory fallbacks. This allows evaluation without infrastructure setup.
 
----
-*Vitto Technologies Pvt. Ltd. — Confidential*
